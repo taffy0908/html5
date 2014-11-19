@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>svg初学</title>
+	<style type="text/css">
+		body {
+			font: 10pt Arial, sans-serif;
+			color: #555;
+		}
+		svg{
+		  margin: 0;
+		  background: #EEEEEE;
+		}
+	</style>
+</head>
+<body>
+	<p>课程参照： <a href="http://www.gbtags.com/gb/gbliblist/32.htm">极客标签教程：SVG基础之Path对象详解</a> </p>
+	<p>svg绘制圆</p>
+	<svg width="300" height="300">
+		<circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="red"/>
+	</svg>
+
+	<p>使用path绘制直线，水平直</p>
+	<svg width="300" height="300">
+		<path d="M 0 0 H 100 100" fill="none" stroke="orange" stroke-width="5" />
+	</svg>
+
+	<p>使用path绘制直线，斜着直</p>
+	<svg width="300" height="300">
+		<path d="M 100 100 L 200 200" stroke="orange" stroke-width="5" />
+	</svg>
+
+	<p>使用path生成折线，可以理解成(100,100)->(100,50)，这两点之间画一条直线；然后(100,50)->(200,150)，这两点之间画一条直线</p>
+	<svg width="300" height="300">
+		<path d="M 100 100 L 100 50 200 150" fill="none" stroke="orange" stroke-width="2" />
+	</svg>
+
+	<p>使用path生成闭合折线，在折线基础上，添加参数 z或者Z</p>
+	<svg width="300" height="300">
+		<path d="M 100 100 L 100 50 200 150 Z" fill="none" stroke="orange" stroke-width="2" />
+	</svg>
+	<p>绘制二次贝塞尔曲线</p>
+	<svg width="500" height="500">
+		<path d="M 100,200 L 200,400 300,200" fill="none" stroke="green" stroke-width="3"/>
+		<path d="M 100,200 Q 200,400 300,200" fill="none" stroke="orange" stroke-width="3"/>
+	</svg>
+	<p>绘制三次贝塞尔曲线，三次贝塞尔曲线比二次贝塞尔曲线多一个控制点参数，用来生成曲线的曲度。</p>
+	<p>以下四条线，橘色和黑色的是三次贝塞尔曲线；绿色的是折线；红色的是二次贝塞尔曲线。</p>
+	<svg width="500" height="500">
+		<path d="M 0,0 L 200,200 400,0" fill="none" stroke="green" stroke-width="3"/>
+		<path d="M 0,0 Q 200,200 400,0" fill="none" stroke="red" stroke-width="3"/>
+		<path d="M 0,0 C 200,200 200,200 400,0 " fill="none" stroke="orange" stroke-width="3"/>
+		<path d="M 0,0 C 100,10 290,10 400,0 " fill="none" stroke="black" stroke-width="3"/>
+	</svg>
+	<p>绘制椭圆弧曲线效果</p>
+	<p>椭圆弧曲线参数：A rx ry x-axis-rotation large-arc-flag sweep-flag x y</p>
+	<p>A - 椭圆弧；rx - x轴半径；<br>
+		ry - y轴半径；<br>x-axis-rotation - x轴旋转；<br>large-arc-flag - 选择大弧度(1),或者小弧度(0)；<br>sweep-flag - 表示弧线的方向，0表示从起点到终点沿逆时针画弧，1表示从起点到终点沿顺时针画弧；<br>x - x轴坐标；<br>y - y轴坐标</p>
+	<svg height="500" width="500">
+		<path d="M 100,100 A 30,50 1 0,0 200,150 z" fill="#080" stroke="#8f8" stroke-width="5" opacity="0.5"/>
+		<path d="M 100,100 A 30,50 0 0,1 200,150 z" fill="#088" stroke="cyan" stroke-width="5" opacity="0.5"/>
+		<path d="M 100,100 A 300,30 1 0,0 200,150" fill="#880" stroke="yellow" stroke-width="5" opacity="0.5"/>
+		<path d="M 100,100 A 300,30 0 0,1 200,150" fill="#800" stroke-width="5" opacity="0.5"/>
+	</svg>
+</body>
+</html>
