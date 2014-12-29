@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas初级学习之绘制基本曲线</title>
+	<style>
+		body {
+			font: 10pt Arial, sans-serif;
+			color: #555;
+			background: #ddd;
+		}
+	</style>
+	
+</head>
+<body>
+	<p>该学习笔记参考整理自  <a href="http://www.gbtags.com/gb/gbliblist/1.htm">极客标签:HTML5画布Canvas基础入门</a>，感谢分享</p>
+	<canvas id="gbCanvas" width="1000" height="500"></canvas>
+	<script type="text/javascript">
+		var canvas = document.getElementById('gbCanvas');
+		var context = canvas.getContext('2d');//获取画布的上下文context
+		//使用h5画布绘制直线
+		context.beginPath();//开始准备绘制新的图形
+		context.moveTo(150, 50);//开始设置起始绘制坐标的位置
+		context.lineTo(300, 50);//开始设置直线绘制结束的坐标位置
+		context.lineWidth = 10;//设置直线线粗为10px
+		context.strokeStyle = 'orange';
+		context.lineCap = 'butt';//设置直线两端的样式，butt为缺省值
+		context.stroke();//开始正式绘制一条直线
+
+		context.beginPath();
+		context.moveTo(150, 100);
+		context.lineTo(300, 100);
+		context.lineWidth = 10;
+		context.strokeStyle = 'red';
+		context.lineCap = 'round';
+		context.stroke();
+
+		context.beginPath();
+		context.moveTo(150, 150);
+		context.lineTo(300, 150);
+		context.lineWidth = 10;
+		context.strokeStyle = 'blue';
+		context.lineCap = 'square';
+		context.stroke();
+
+		//绘制圆，context.arc(...)
+		var x = 450,
+			y = 100,
+			radius = 50,
+			startAngle = 0.5*Math.PI,
+			endAngle = 1.5*Math.PI,
+			counterClockWise = false;
+
+		context.beginPath();
+		context.arc(x,
+					y,
+					radius,
+					startAngle,
+					endAngle,
+					counterClockWise);
+		context.strokeStyle = 'orange';
+		context.lineWidth = 10;
+		context.stroke();
+
+		//绘制二次曲线
+		var controllPointX = 200,
+			controllPointY = 500,
+			endingPointX = 300,
+			endingPointY = 300;
+		context.beginPath();
+		context.moveTo(100, 300);
+		context.quadraticCurveTo(controllPointX, controllPointY, endingPointX, endingPointY);
+		context.lineWidth = 10;
+		context.strokeStyle = '#ed4521';
+		context.stroke();
+
+		//绘制贝塞尔曲线
+		
+		var controllPoint1X = 340,
+			controllPoint1Y = 600,
+			controllPoint2X = 588,
+			controllPoint2Y = 400,
+			endingPointX = 288,
+			endingPointY = 370;
+		context.beginPath();
+		context.moveTo(308, 330);
+		context.bezierCurveTo(controllPoint1X, controllPoint1Y, controllPoint2X, controllPoint2Y, endingPointX, endingPointY);
+		context.lineWidth = 10;
+		context.strokeStyle = '#456789';
+		context.stroke();
+	</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test font-size</title>
+	<style>
+
+		body {
+			font-family: 'Microsoft YaHei';
+		}
+
+		div{
+			background: orange;
+			width: 700px;
+			height: 100px;
+			margin-bottom: 10px;
+			
+		}
+
+		div.first {
+			font-size: 0.5rem;
+		}
+
+		div.second {
+			font-size: 12px;
+		}
+
+		div.third {
+			font-size: 20px;
+		}
+
+		div.third-one {
+			font-size: 0.7em;
+		}
+
+	</style>
+</head>
+<body>
+	<h2>
+		浏览器默认的字体大小为16px.
+	</h2>
+	<h3>
+		1、该区域设置字体为0.5rem，但是实际为12px。
+	</h3>
+	<div class="first">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam distinctio temporibus tempora a eveniet quas qui veritatis, sunt perferendis harum saepe cum, ipsum atque explicabo magnam impedit nam, officia eaque.
+	</div>
+	<h3>
+		2、该区域设置字体为12px。可以看到区域1和2字体大小一样，说明浏览器有字体大小下线，对于chrome来说，为12px。
+	</h3>
+	<div class="second">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est quaerat maiores eos, fuga, quisquam aut numquam quibusdam consectetur delectus dignissimos tempore debitis. Qui natus, ea quidem cupiditate animi quis blanditiis.
+	</div>
+	<h3>
+		3、该区域字体为父节点字体的0.7倍。父节点字体为20px，所以该区域字体大小为14px。
+	</h3>
+	<div class="third">
+		<div class="third-one">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum ab unde quod facilis cumque fugit sequi id! Aperiam eaque, tempora ipsum illo. Dolorum dicta dolore sapiente officia perspiciatis aut error.
+		</div>
+	</div>
+</body>
+</html>
