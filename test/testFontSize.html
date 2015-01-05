@@ -12,27 +12,50 @@
 		div{
 			background: orange;
 			width: 700px;
-			height: 100px;
+			height: auto;
 			margin-bottom: 10px;
 			
 		}
 
-		div.first {
+		.first {
 			font-size: 0.5rem;
 		}
 
-		div.second {
+		.second {
 			font-size: 12px;
 		}
 
-		div.third {
+		.third {
 			font-size: 20px;
 		}
 
-		div.third-one {
-			font-size: 0.7em;
+		.third-one {
+			font-size: 0.7rem;
+		}
+		
+		.forth {
+			font-size: 1.5em;
 		}
 
+		.forth_one {
+			font-size: 1em;
+			background-color: red;
+		}
+		
+		.forth_two {
+			font-size: 0.5rem;
+		}
+
+		.forth_three, .forth_four{
+			width: 10em;
+			height: auto;
+			font-size: 1.5em;
+			background-color: pink;
+		}
+		.forth_four {
+			width: 20rem;
+			background-color: green;
+		}
 	</style>
 </head>
 <body>
@@ -57,6 +80,28 @@
 	<div class="third">
 		<div class="third-one">
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum ab unde quod facilis cumque fugit sequi id! Aperiam eaque, tempora ipsum illo. Dolorum dicta dolore sapiente officia perspiciatis aut error.
+		</div>
+	</div>
+	<h3>
+		4、该区域字体单位为em,1.5em。
+	</h3>
+	<div class="forth">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium eligendi magni, sed ipsum doloremque autem. Nihil placeat magni debitis, eveniet, sed id obcaecati repellendus quibusdam! Incidunt veniam error omnis nesciunt.我的字体大小是1.5em，即1.5*16 = 24px
+		<div class="forth_one">
+			我看着，还剩多少时间，能取悦好夏天~~~
+			我的字体是1em，是相对于父节点而言的，所以是24px
+		</div>
+		<div class="forth_two">
+			我看着，还剩多少时间，能取悦好夏天~~~
+			我的字体是0.5rem, max(0.5*16, 12) = 12px
+		</div>
+		<div class="forth_three">
+			我们都有一个家，名字叫中国，兄弟姐妹都很多，景色也不错。
+			我的字体1.5em，即1.5*24 = 36px。我的宽度是10em，这个em是相对于我的字体大小而言的，即36*10 = 360px
+		</div>
+		<div class="forth_four">
+			我们都有一个家，名字叫中国，兄弟姐妹都很多，景色也不错。
+			我的字体1.5em，即1.5*24 = 36px。我的宽度是20rem，即16*20 = 320px
 		</div>
 	</div>
 </body>
