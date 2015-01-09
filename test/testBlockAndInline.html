@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>测试行内元素和块级元素</title>
+	<style>
+		body, div, p, span, strong {
+			margin: 0;
+			padding: 0;
+		}
+		p {
+			background: red;
+			height: 100px;
+			width: 200px;
+			margin-top: 20px;
+			padding-top: 20px;
+		}
+		div {
+			background: yellow;
+			padding: 20px;
+		}
+		span {
+			background: blue;
+			width: 300px;
+			height: 200px;
+			margin-top: 30px;
+			padding-top: 20px;
+			padding-bottom: 100px;
+			margin-bottom: 20px;
+		}
+
+		strong {
+			background: green;
+			padding-top: 20px;
+			margin-top: 100px;
+			margin-bottom: 100px;
+			padding-bottom: 100px;
+		}
+	</style>
+</head>
+<body>
+
+	<p>块级元素p</p>
+	<div>块级元素div</div>
+	<strong>行内元素strong</strong>
+	<span>行内元素span</span>
+	<em>行内元素的margin-top和margin-bottom都没有起作用，也不可以设置行内元素的width和height。可以通过修改display为inline-block来使其支持margin和宽度高度的设置。</em>
+</body>
+</html>
