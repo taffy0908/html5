@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>测试居中</title>
 	<style>
+		
 		/*方法一*/
 		.wrap_1 {
 			background: #0f0;
@@ -71,9 +72,51 @@
 			background: #fff;
 			color: #316ac5;
 		}
+		/*父元素高度确定的多行元素竖直居中*/
+		.wrap_2 {
+			height: 300px;
+			background: red;
+			width: 100%;
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		.child {
+			background: orange;
+		}
+		/*z-index的设置*/
+		#one {
+			width: 300px;
+			height: 300px;
+			background: black;
+		}
+
+		#two {
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			z-index: 1;
+			left: 100px;
+			top: 250px;
+		}
+		#three {
+			width: 100px;
+			height: 100px;
+			background: green;
+			position: relative;
+			z-index: 2;
+			left: 120px;
+			top: -100px;
+		}
+
 	</style>
 </head>
 <body>
+	<div id="one"></div>
+	<div id="two"></div>
+	<div id="three"></div>
+
 	<div class="wrap_1">
 		<ul class="test_1">
 			<li><a href="">1</a></li>
@@ -91,7 +134,7 @@
 			<li><a href="">5</a></li>
 		</ul>
 	</div>
-	
+
 	<div class="wrap">
 		<ul class="test">
 			<li><a href="">1</a></li>
@@ -109,6 +152,17 @@
 			<li><a href="">5</a></li>
 		</ul>
 	</div>
+	<div class="wrap_2">
+		<div class="child">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ipsum, nihil nemo ducimus sunt iste, placeat iure accusantium, natus perferendis quam quibusdam deleniti! Quae incidunt eligendi ipsa vel, enim optio.
+		</div>
+	</div>
+	
+	<script>
+		window.onload = function() {
+			console.log('window loaded');
+		}
 
+	</script>
 </body>
 </html>
